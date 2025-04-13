@@ -1,0 +1,149 @@
+/* Shared Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .responsive-menu {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #333;
+  }
+  
+  .responsive-menu a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Login Page */
+  .login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .login-container input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+  }
+  
+  /* ToDo List */
+  .todo-container {
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .todo-container li {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+  }
+  
+  /* Responsive Cards */
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .card {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+  
+  /* Tablet (2 cards in a row) */
+  @media (max-width: 768px) {
+    .card {
+      flex: 1 1 calc(50% - 1rem);
+    }
+  }
+  
+  /* Mobile (1 column) */
+  @media (max-width: 480px) {
+    .card {
+      flex: 1 1 100%;
+    }
+  }
+  /* Add this CSS for the logout button */
+  .logout-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto; /* Pushes button to the right */
+  }
+  .logout-btn:hover {
+    background: #d32f2f;
+  }
+  .responsive-menu {
+    display: flex;
+    align-items: center;
+  }
+
+
+     * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Menu Toggle Button (Hidden on desktop) */
+      .menu-toggle {
+        display: none;
+        background: #333;
+        color: white;
+        border: none;
+        font-size: 24px;
+        padding: 15px;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+      }
+      
+      /* Your Original Menu Structure */
+      .responsive-menu {
+        display: flex;
+        background: #333;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      .responsive-menu a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 12px;
+      }
+    
+      /* Desktop Layout */
+      @media (min-width: 769px) {
+        .responsive-menu {
+          display: flex !important; /* Force show on desktop */
+        }
+      }
+      
+      /* Mobile Layout */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block; /* Show toggle button */
+        }
+        
+        .responsive-menu {
+          display: none; /* Hide menu by default */
+          flex-direction: column;
+          gap: 0;
+        }
+        
+        .responsive-menu.active {
+          display: flex; /* Show when active */
+        }
+    }

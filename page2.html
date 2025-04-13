@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Cards</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Cards Container */
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Individual Cards */
+    .card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      flex: 1 1 300px; /* Base width for mobile */
+    }
+
+    /* Desktop: 3 cards/row */
+    @media (min-width: 992px) {
+      .card {
+        flex: 1 1 calc(33.333% - 20px); /* 3 cards with gap */
+      }
+    }
+
+    /* Tablet: 2 cards/row + 3rd below */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .card {
+        flex: 1 1 calc(50% - 20px); /* 2 cards with gap */
+      }
+      .card:nth-child(3) {
+        flex: 1 1 100%; /* Forces 3rd card to new line */
+      }
+    }
+
+    /* Mobile: 1 column (default style) */
+  </style>
+</head>
+<body>
+  <nav class="responsive-menu">
+    <a href="dashboard.html">Home</a>
+  </nav>
+  
+  <div class="cards-container">
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+  </div>
+</body>
+</html>

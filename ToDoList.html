@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="responsive-menu">
+    <a href="dashboard.html">Home</a>
+  </nav>
+  <div class="todo-container">
+    <h1>ToDo List</h1>
+    <p> Add a task fast and confirm using the button to access other functions</p>
+    <input type="text" id="taskInput" placeholder="Add a task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+  </div>
+  <script>
+    function addTask() {
+      const task = document.getElementById("taskInput").value;
+      if (task.trim() === "") return;
+      
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span>${task}</span>
+        <button onclick="editTask(this)">Edit</button>
+        <button onclick="deleteTask(this)">Delete</button>
+      `;
+      document.getElementById("taskList").appendChild(li);
+      document.getElementById("taskInput").value = "";
+    }
+
+    function deleteTask(button) {
+      button.parentElement.remove();
+    }
+
+    function editTask(button) {
+      const li = button.parentElement;
+      const span = li.querySelector("span");
+      const newText = prompt("Edit task:", span.textContent);
+      if (newText !== null) span.textContent = newText;
+    }
+  </script>
+</body>
+</html>

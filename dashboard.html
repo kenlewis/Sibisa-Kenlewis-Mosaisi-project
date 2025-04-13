@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .menu-items {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 10px;
+      background-color: #444;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 1;
+    }
+
+    .menu-items a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+
+    .menu-items a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-items.active {
+      display: flex;
+    }
+    .logout-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-left: auto;
+    }
+
+    .logout-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    h1 {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="menu-icon" onclick="toggleMenu()">☰ Menu</span>
+    <div id="menu" class="menu-items">
+      <a href="ToDoList.html">Home Page</a>
+      <a href="page2.html">Page 2</a>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </nav>
+  <h1>Welcome to the Dashboard</h1>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+  <script>
+    function logout() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
